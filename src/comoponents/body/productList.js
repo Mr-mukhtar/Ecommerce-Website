@@ -30,22 +30,23 @@ const productsArr = [
 
 function ProductList() {
   return (
-    <Container style={{border:"none"}}>
+    <Container style={{ border: 'none'  }}>
       <h1 className="text-center mb-5">MUSIC</h1>
-      <Row>
+
+      <Row className="justify-content-center">
         {productsArr.map((product, index) => (
-          <Col key={index} md={5} lg={7} xl={3} className="mb-3">
-            <Card style={{border:"none", scale:"50px"}}>
+          <Col key={index}  md={6} lg={6} xl={6} className="mb-3 p-50">
+            <Card style={{ border: 'none' }} className="px-5">
               <div className="text-center mt-5 mb-1">
                 <h5>{product.albumName}</h5>
               </div>
-              <Card.Img variant="top" src={product.imageUrl}  />
+              <Card.Img variant="top" src={product.imageUrl} />
               <Card.Body>
                 <Card.Title>{product.title}</Card.Title>
                 <Row className="align-items-center">
                   <Col>${product.price}</Col>
                   <Col xs="auto">
-                    <Button size="sm" variant="primary">
+                    <Button className="btn btn-primary"  variant="primary">
                       Add to Cart
                     </Button>
                   </Col>
