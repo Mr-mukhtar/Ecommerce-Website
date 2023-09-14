@@ -1,8 +1,10 @@
+//Header.js
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import HeaderCartButton from './HeaderCartButton';
 
 const Header = (props) => {
+ 
   return (
     <>
       <Navbar bg="dark" variant="dark" fixed="top">
@@ -18,7 +20,7 @@ const Header = (props) => {
               ABOUT
             </Nav.Link>
           </Nav>
-          <HeaderCartButton onClick={props.onShowCart} />
+          <HeaderCartButton  />
         </Container>
       </Navbar>
     </>
