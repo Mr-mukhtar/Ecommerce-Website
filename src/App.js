@@ -1,22 +1,21 @@
-import Generic from './comoponents/body/Generic';
-import ProductList from './comoponents/body/productList';
-import Footer from './comoponents/layout/Footer';
-import Header from './comoponents/layout/Header';
-import { CartProvider } from './comoponents/body/CartContext';
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './comoponents/HomePage/HomePage';
+import Store from './comoponents/StorePage/Store';
+import About from './comoponents/AboutPage/About';
+import { CartProvider } from './comoponents/StorePage/body/CartContext';
 function App() {
-  
-
   return (
-    <CartProvider>
- 
-      <Header />
-      <br />
-      
-      <Generic />
-      <ProductList />
-      <Footer />
-    
-    </CartProvider>
+    <Router>
+      <CartProvider>  
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/store" element={<Store />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+      </CartProvider>
+    </Router>
   );
 }
 
