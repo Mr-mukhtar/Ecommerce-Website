@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button, Container, Row, Col, Card } from 'react-bootstrap';
-import { useCart } from './CartContext'; 
+import { useCart } from '../../../store/CartContext'; 
 const productsArr = [
   {
     id: 1,
@@ -37,6 +37,7 @@ function ProductList() {
 
   const handleAddToCart = (product) => {
     addToCart(product);
+   
   };
 
   return (
@@ -73,5 +74,4 @@ function ProductList() {
     </Container>
   );
 }
-
 export default ProductList;

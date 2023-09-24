@@ -1,21 +1,43 @@
 // App.js
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './comoponents/HomePage/HomePage';
-import Store from './comoponents/StorePage/Store';
-import About from './comoponents/AboutPage/About';
-import { CartProvider } from './comoponents/StorePage/body/CartContext';
+import React , {useContext}from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import Layout from './comoponents/layout/Layout';
+import HomePage from './comoponents/Pages/HomePage';
+import StorePage from './comoponents/Pages/StorePage';
+import AuthPage from './comoponents/Pages/AuthPage';
+import About from './comoponents/Pages/AboutPage';
+import { CartProvider } from './store/CartContext';
+import AuthContext from './store/auth-context';
+
 function App() {
+  const authCtx = useContext(AuthContext);
+
   return (
-    <Router>
-      <CartProvider>  
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/store" element={<Store />} />
-          <Route path="/about" element={<About />} />
-        </Routes>
-      </CartProvider>
-    </Router>
+    <CartProvider>
+      <Layout>
+        <main>
+          <Switch>
+            {/* Update the path for the homepage */}
+            <Route path='/' exact>
+              <HomePage />
+            </Route>
+            <Route path='/store' exact>
+              {authCtx.isLoggedIn ? <StorePage /> : <Redirect to='/auth' />}
+            </Route>
+            <Route path='/about'>
+              <About />
+            </Route>
+            {!authCtx.isLoggedIn && (
+              <Route path='/auth'>
+                <AuthPage />
+              </Route>
+            )}
+           
+            <Redirect to='/' />
+          </Switch>
+        </main>
+      </Layout>
+    </CartProvider>
   );
 }
 

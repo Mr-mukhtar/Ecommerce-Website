@@ -1,13 +1,12 @@
 import React from 'react';
-import Footer from '../StorePage/layout/Footer';
-import Header from '../StorePage/layout/Header';
+
 import { Container, Card } from 'react-bootstrap';
 import ListItem from './ListItem';
 
 const Home = () => {
   return (
     <div>
-      <Header />
+    
       <Container fluid className="bg-secondary" style={{ height: '400px' }}>
         <h1
           className="text-center m-5"
@@ -23,7 +22,7 @@ const Home = () => {
       </Container>
       <h1 className="text-center m-3">TOUR</h1>
       <ListItem/>
-      <Footer />
+      
     </div>
   );
 };

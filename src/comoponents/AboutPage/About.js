@@ -1,6 +1,5 @@
 import React from 'react';
-import Header from '../StorePage/layout/Header';
-import Footer from '../StorePage/layout/Footer';
+
 import {  Container, Row, Col } from 'react-bootstrap';
 import Generic from '../StorePage/body/Generic';
 
@@ -9,7 +8,7 @@ const About = () => {
     <div>
       
       <Generic/>
-      <Header />
+     
       <Container className='p-5'>
           <h2 className='text-center p-2 mb-5'>About</h2>
         <Row>
@@ -32,7 +31,7 @@ const About = () => {
 Lorem ipsum dolor, sit amet consectetur rebates. The distinction, that arise from or to. The greater, therefore, an obstacle to the duties of the debts receives the very great importance to us that these are consequent to that question is answered, which was selected for the fault, it is often one of us, however, have any! Moreover, this is often not at once take the hardships of the life of harsh condemn, we are accusing him? Him whom something large cisterns.</p>
       </Container>
 
-      <Footer />
+   
     </div>
   );
 };
